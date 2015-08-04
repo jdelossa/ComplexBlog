@@ -1,0 +1,21 @@
+.navbar-fixed-top {
+  background-color: @color-dark-gray;
+  box-shadow: @color-almost-black 0px 3px 3px;
+  .navbar-brand {
+    color: @color-white;
+    font-size: 20px;
+  }
+  .btn {
+    position: relative;
+    top: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-fixed-top {
+    height: 55px;
+    .btn {
+      top: -40px;
+    }
+  }
+}

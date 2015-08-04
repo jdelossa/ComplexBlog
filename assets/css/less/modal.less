@@ -1,0 +1,43 @@
+.modal-open .modal{
+  .modal-header {
+    background-color: @color-action-green;
+    color: @color-white;
+    .modal-title {
+      -webkit-font-smoothing: antialiased;
+      .fa {
+        padding-right: 15px;
+      }
+    }
+    .icon {
+      color: @color-white;
+      font-size: 20px;
+      margin-right: 15px;
+      position: relative;
+      top: 1px;
+    }
+    .close {
+      color: @color-white;
+      opacity: 0.8;
+    }
+  }
+  .modal-body {
+    label {
+      padding-top: 10px;
+    }
+  }
+  .modal-footer {
+    border-top: none;
+    padding: 15px 30px 15px 15px;
+    .btn {
+      text-transform: uppercase;
+    }
+    input[type=submit] {
+      background-color: @color-action-green;
+      border-color: solid 1px darken(@color-action-green, 10%);
+      color: @color-white;
+    }
+  }
+
+
+}
+
