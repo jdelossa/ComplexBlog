@@ -1,0 +1,68 @@
+<nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/">Complex Blog</a>
+        </div>
+        <a class="btn btn-success pull-right" ng-click="open()"><i class="fa fa-plus"></i> Add Post</a>
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Add Post Modal -->
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title"><i class="fa fa-plus"></i>Add Post</h3>
+    </div>
+
+    <div class="modal-body">
+        <form name="form">
+            <div class="row">
+                <div class="col-sm-8">
+                    <label for="title">Post Title: </label>
+                    <input type="text" name="title" ng-model="post.title" class="form-control" size="40" required/>
+                </div>
+                <div class="col-sm-4">
+                    <label for="author">Author: </label>
+                    <input type="text" name="author" ng-model="post.author" class="form-control" size="20" required/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label for="date">Date: </label>
+                    <input type="date" name="date" ng-model="post.date" class="form-control" size="12" required/>
+                </div>
+                <div class="col-sm-6">
+                    <label for="category">Category: </label>
+                    <select name="category" ng-model="post.category" class="form-control" required>
+                        <option>Casual</option>
+                        <option>Code</option>
+                        <option>Music</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <label for="content">Post Content: </label>
+                    <textarea name="content" ng-model="post.content" class="form-control" rows="3" size="255" required></textarea>
+                </div>
+            </div>
+
+            <div ng-show="form.$dirty && form.$invalid" class="error">
+                <span ng-show="form.title.$error.required">Title required.</span>
+                <span ng-show="form.author.$error.required">Author required.</span>
+                <span ng-show="form.date.$error.required">Date required.</span>
+                <span ng-show="form.category.$error.required">Category required.</span>
+                <span ng-show="form.content.$error.required">Content required.</span>
+            </div>
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <input class="btn" type="submit" value="Save" ng-click="add()" ng-disabled="form.$invalid">
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+    </div>
+
+
+</script>
+<!-- End Add Post Modal -->

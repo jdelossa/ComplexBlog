@@ -4,8 +4,12 @@ body {
   height: 100%;
 }
 body {
-  padding-top: 50px;
+  background-color: #ecf0f1;
+  padding-top: 80px;
   padding-bottom: 20px;
+}
+a {
+  color: #34495e;
 }
 /* 404 Page Styles */
 .error-404 {
@@ -15,8 +19,27 @@ body {
 footer {
   margin: 50px 0;
 }
+.page-header {
+  margin: 10px 0 20px 0;
+}
+.breadcrumb {
+  background-color: #ffffff;
+}
+.error {
+  margin: 5px;
+  padding: 4px;
+  width: 99%;
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+  border-radius: 3px;
+}
+.btn {
+  font-size: 12px;
+  padding: 4px 12px;
+}
 .navbar-fixed-top {
-  background-color: #2a2323;
+  background-color: #34495e;
   box-shadow: #040101 0px 3px 3px;
 }
 .navbar-fixed-top .navbar-brand {
@@ -25,7 +48,7 @@ footer {
 }
 .navbar-fixed-top .btn {
   position: relative;
-  top: 10px;
+  top: 13px;
 }
 @media (max-width: 767px) {
   .navbar-fixed-top {
@@ -36,7 +59,7 @@ footer {
   }
 }
 .modal-open .modal .modal-header {
-  background-color: #76b916;
+  background-color: #5cb85c;
   color: #ffffff;
 }
 .modal-open .modal .modal-header .modal-title {
@@ -67,7 +90,24 @@ footer {
   text-transform: uppercase;
 }
 .modal-open .modal .modal-footer input[type=submit] {
-  background-color: #76b916;
-  border-color: solid 1px #598b11;
+  background-color: #5cb85c;
+  border-color: solid 1px #449d44;
   color: #ffffff;
+}
+.panel-default {
+  border-top: solid 2px #95a5a6;
+}
+.panel-default .panel-heading .label {
+  font-size: 90%;
+  position: relative;
+  bottom: 18px;
+}
+.panel-default .panel-body .label {
+  float: right;
+  font-size: 60%;
+}
+.panel-default .panel-body .panel-options {
+  background-color: #ffffff;
+  border: none;
+  text-align: right;
 }

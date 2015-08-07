@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
 
-    <body ng-app="ComplexBlog" data-ng-controller="BlogCtrl">
+    <body ng-app="ComplexBlogApp" data-ng-controller="blogPostController">
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
             your browser</a> to improve your experience.</p>
@@ -30,24 +30,26 @@
 
         <!-- Complex App -->
             <!-- Header -->
-            <div ng-include='"templates/header.html"'></div>
+            <div ng-include='"partials/header.html"'></div>
 
             <!-- Body -->
             <div ng-view></div>
 
             <!-- Footer -->
-            <div ng-include='"templates/footer.html"'></div>
+            <div ng-include='"partials/footer.html"'></div>
 
         <!-- Vendor: Javascripts -->
         <script src="assets/vendor/js/jquery.min.js"></script>
+        <!-- Bootstrap -->
         <script src="assets/vendor/js/bootstrap.min.js"></script>
+        <!-- Angular -->
         <script src="assets/vendor/js/angular.min.js"></script>
         <script src="assets/vendor/js/angular-route.min.js"></script>
         <script src="assets/vendor/js/angular-animate.min.js"></script>
         <script src="assets/vendor/js/angular-ui-bootstrap.min.js"></script>
 
-        <!-- Our Website Javascripts -->
-        <script src="assets/js/main.js"></script>
+        <!-- Website Javascripts -->
+        <script src="assets/js/app.js"></script>
 
     </body>
 </html>
