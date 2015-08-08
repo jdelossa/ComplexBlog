@@ -23,8 +23,13 @@ app.config(function($routeProvider) {
     }).when('/view/:id', {
         templateUrl: 'partials/_view.html',
         controller: 'viewPostController'
-    }).otherwise("/404", {templateUrl: "partials/404.html"});;
+    }).when('/view/:id/delete', { controller: 'deletePostController'})
+    .otherwise({
+        templateUrl: 'partials/404.html',
+        controller: 'notExistController',
+    });
 });
+
 
 /**
  * Blog Posts
@@ -77,13 +82,7 @@ app.controller('blogPostController', function($scope, postService, $modal, $log)
  */
 app.controller('addPostController', function($scope, $location, postService, $modalInstance) {
 
-    $scope.post = {
-        title: "",
-        author: "",
-        date: "",
-        category: "",
-        content: ""
-    };
+    $scope.post = { title: "", author: "", date: "", category: "", content: "" };
 
     $scope.add = function() {
         postService.posts.push($scope.post);
@@ -95,6 +94,19 @@ app.controller('addPostController', function($scope, $location, postService, $mo
 
     $scope.cancel = function() {
         $modalInstance.dismiss('cancel');
+    };
+
+});
+
+/**
+ * View One Blog Post
+ */
+app.controller('viewPostController', function($scope, $routeParams, $location) {
+
+    $scope.post = $scope.posts[$routeParams.id];
+
+    $scope.update = function() {
+        $location.path('/');
     };
 
 });
@@ -112,25 +124,24 @@ app.controller('editPostController', function($scope, $routeParams, $location) {
 });
 
 /**
- * View One Blog Post
+ * Delete Blog Post
  */
-app.controller('viewPostController', function($scope, $routeParams, $location) {
+app.controller('deletePostController', function($scope) {
 
+    $scope.delete = function() {
+        $scope.posts.splice( $scope.posts.indexOf(post), 1 );
+    };
+});
+
+
+
+/**
+ * 404 Controller
+ */
+app.controller('notExistController', function($scope, $routeParams, $location) {
     $scope.post = $scope.posts[$routeParams.id];
 
     $scope.update = function() {
         $location.path('/');
     };
 });
-
-/**
- * Delete Blog Post
- */
-//app.controller('editPostController', function($scope, $routeParams, $location) {
-//
-//    $scope.post = $scope.posts[$routeParams.id];
-//
-//    $scope.update = function() {
-//        $location.path('/');
-//    };
-//});

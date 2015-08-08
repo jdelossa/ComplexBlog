@@ -8,16 +8,14 @@
 
                     <div class="row" data-ng-repeat="post in posts | filter: searchValue">
                         <div class="col-md-5">
-                            <a href="post">
+                            <a ng-href="#view/{{$index}}">
                                 <img src="http://placehold.it/600x300" class="img-responsive">
                             </a>
                         </div>
                         <div class="col-md-7">
-                            <!--<a href="#edit/{{$index}}" class="glyphicon glyphicon-edit btn btn-primary"> Edit</a>
-                            <a href="#delete" class="glyphicon glyphicon-trash btn btn-danger"> Delete</a>-->
                             <h4><span class="label label-primary">{{ post.category}}</span></h4>
-                            <h3><a href="#view/{{$index}}">{{ post.title }}</a></h3>
-                            <p>by <a href="#/">{{ post.author }}</a> || {{ post.date }}</p>
+                            <h3><a ng-href="#view/{{$index}}">{{ post.title }}</a></h3>
+                            <p>by <a ng-href="#/">{{ post.author }}</a> || {{ post.date }}</p>
                             <p>{{ post.content }}</p>
                         </div>
                         <div class="row"><div class="col-sm-12"><hr></div></div>
@@ -30,7 +28,7 @@
                 <div class="panel-heading"><h4 class="panel-title">Recent Stories</h4></div>
                 <div class="panel-body">
                     <ul data-ng-repeat="post in posts">
-                        <li><a href="#view/{{$index}}">{{ post.title }}</li>
+                        <li><a ng-href="#view/{{$index}}">{{ post.title }}</li>
                     </ul>
                 </div>
             </div>

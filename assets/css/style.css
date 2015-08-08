@@ -102,11 +102,17 @@ footer {
   position: relative;
   bottom: 18px;
 }
+.panel-default .panel-body label {
+  margin-top: 10px;
+}
 .panel-default .panel-body .label {
   float: right;
   font-size: 60%;
 }
 .panel-default .panel-body .panel-options {
+  text-align: right;
+}
+.panel-default .panel-footer {
   background-color: #ffffff;
   border: none;
   text-align: right;

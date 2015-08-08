@@ -1,7 +1,7 @@
 <div class="container" ng-controller="viewPostController">
 
     <ol class="breadcrumb">
-        <li><a href="#/">Home</a></li>
+        <li><a ng-href="#/">Home</a></li>
         <li class="active">{{ post.title }}</li>
     </ol>
 
@@ -12,18 +12,16 @@
         <div class="panel-body">
             <div class="row" ng-cloak>
                 <div class="col-md-5">
-                    <a href="post">
-                        <img src="http://placehold.it/600x300" class="img-responsive">
-                    </a>
+                    <img src="http://placehold.it/600x300" class="img-responsive">
                     <h4><span class="label label-default"></span></h4>
                 </div>
                 <div class="col-md-7">
                     <div class="panel-options">
-                        <a href="#edit" class="btn btn-warning"> <i class="fa fa-pencil"></i> Edit</a>
-                        <a href="#delete" class="btn btn-danger"> <i class="fa fa-trash-o"></i> Delete</a>
+                        <a ng-href="#edit/{{$index}}" class="btn btn-warning"> <i class="fa fa-pencil"></i> Edit</a>
+                        <a ng-href="#delete" class="btn btn-danger"> <i class="fa fa-trash-o"></i> Delete</a>
                     </div>
                     <h3 class="page-header">{{ post.title }}</h3>
-                    <p>by <a href="#/">{{ post.author }}</a> || {{ post.date }}</p>
+                    <p>by <a ng-href="#/">{{ post.author }}</a> || {{ post.date }}</p>
                     <p>{{ post.content }}</p>
                 </div>
             </div>
