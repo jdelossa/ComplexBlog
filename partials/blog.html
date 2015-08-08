@@ -1,0 +1,38 @@
+<div class="container" ng-cloak>
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4 class="panel-title">Top Stories</h4></div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" ng-model="searchValue" placeholder="Search Complex Blog" /><br><br>
+
+                    <div class="row" data-ng-repeat="post in posts | filter: searchValue">
+                        <div class="col-md-5">
+                            <a ng-href="#view/{{$index}}">
+                                <img src="http://placehold.it/600x300" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="col-md-7">
+                            <h4><span class="label label-primary">{{ post.category}}</span></h4>
+                            <h3><a ng-href="#view/{{$index}}">{{ post.title }}</a></h3>
+                            <p>by <a ng-href="#/">{{ post.author }}</a> || {{ post.date }}</p>
+                            <p>{{ post.content }}</p>
+                        </div>
+                        <div class="row"><div class="col-sm-12"><hr></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4 class="panel-title">Recent Stories</h4></div>
+                <div class="panel-body">
+                    <ul data-ng-repeat="post in posts">
+                        <li><a ng-href="#view/{{$index}}">{{ post.title }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
