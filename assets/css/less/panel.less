@@ -2,6 +2,9 @@
   border-top: solid 2px @color-gray;
 
   .panel-heading {
+    .panel-title {
+      font-family: 'Old Standard TT', serif;
+    }
     .label {
       font-size: 90%;
       position: relative;
@@ -20,11 +23,44 @@
     .panel-options {
       text-align: right;
     }
+    .categories {
+      float: left;
+      list-style-type: none;
+       .label {
+         font-size: 14px;
+         a {
+           color: @color-white;
+         }
+       }
+    }
   }
 
   .panel-footer {
     background-color: @color-white;
     border: none;
     text-align: right;
+  }
+}
+.blog-posts {
+  .panel-heading {
+    background-image: none;
+    background-color: @color-white;
+    .panel-title {
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+  .panel-body {
+    .label {
+      float: right;
+      font-size: 65%;
+      position: relative;
+      bottom: 47px;
+      left: 15px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 100;
+      padding: 0.4em 0.8em 0.4em;
+      border-bottom-right-radius: 0;
+    }
   }
 }

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-fixed-top" role="navigation">
-    <div class="container">
+    <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" ng-href="#/">Complex Blog</a>
         </div>
@@ -27,11 +27,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-5">
                     <label for="date">Date: </label>
-                    <input type="date" name="date" ng-model="post.date" class="form-control" size="12" required/>
+                    <input type="date" name="date" ng-model="post.date" class="form-control" size="12" ng-bind="date | date:'MM/dd/yyyy'" required/>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-5">
                     <label for="category">Category: </label>
                     <select name="category" ng-model="post.category" class="form-control" required>
                         <option>Casual</option>
@@ -39,6 +39,10 @@
                         <option>Music</option>
                         <option>Other</option>
                     </select>
+                </div>
+                <div class="col-sm-2">
+                    <label for="index">Index: </label>
+                    <input type="number" name="index" ng-model="post.index" class="form-control" size="100" required min="4"/>
                 </div>
             </div>
             <div class="row">
@@ -62,7 +66,6 @@
         <input class="btn" type="submit" value="Save" ng-click="add()" ng-disabled="form.$invalid">
         <button class="btn btn-default" ng-click="cancel()">Cancel</button>
     </div>
-
 
 </script>
 <!-- End Add Post Modal -->
